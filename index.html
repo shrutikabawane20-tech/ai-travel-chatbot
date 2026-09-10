@@ -363,3 +363,24 @@ async function sendMessage(text) {
     userInput.focus();
   }
 }
+// Send button click
+sendBtn.addEventListener('click', () => {
+  sendMessage(userInput.value);
+});
+
+// Press Enter to send
+userInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    sendMessage(userInput.value);
+  }
+});
+
+// Suggestion buttons
+document.querySelectorAll('.suggestions button').forEach(button => {
+  button.addEventListener('click', () => {
+    sendMessage(button.dataset.prompt);
+  });
+});
+</script>
+</body>
+</html>
