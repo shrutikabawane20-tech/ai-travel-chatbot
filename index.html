@@ -355,8 +355,7 @@ async function sendMessage(text) {
 
     console.error('Chat error:', err);
 
-    errorMsg.textContent =
-      'Something went wrong. Please try again.';
+    errorMsg.textContent = err.message;
 
   } finally {
     sendBtn.disabled = false;
